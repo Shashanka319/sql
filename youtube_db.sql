@@ -81,7 +81,22 @@ create database youtube;
  followers int,
  alert boolean
  );
- desc youtube_description;
+ 
+ alter table youtube_description add account_name varchar(20);
+ alter table  youtube_description add channel_name varchar(20);
+ alter table  youtube_description add no_of_subscribers int;
+ 
+ alter table youtube_description drop no_of_subscribers;
+ 
+ alter table youtube_description modify column followers bigint;
+ alter table youtube_description modify youtube_description text;
+ alter table youtube_description modify description_type varchar(20);
+ 
+ alter table youtube_description rename column description_type to type;
+ alter table youtube_description rename column youtube_description to description;
+ 
+ 
+  desc youtube_description;
  
  
  
