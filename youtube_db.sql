@@ -58,7 +58,21 @@ create database youtube;
  );
  
  rename table comments to comments_info;
- desc comments;
+ 
+ alter table comments_info add comment_date date;
+ alter table comments_info add comment_time timestamp;
+ alter table comments_info add comment_day enum('sunday','monday','tuesday','wednesday','thursdau','friday','saturday');
+ 
+ alter table comments_info drop comment_time;
+ 
+ alter table comments_info modify column post_type bigint;
+ alter table comments_info modify no_of_comments bigint;
+ alter table comments_info modify comments text;
+ 
+ alter table comments_info rename column no_of_comments to counts_of_comments;
+ alter table comments_info rename column comment_date to date;
+ 
+ desc comments_info;
  
  create table youtube_description(
  acoount_name varchar(20),
