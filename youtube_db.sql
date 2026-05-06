@@ -22,6 +22,7 @@ create database youtube;
  alter table user_info modify column phone_number bigint;
  alter table user_info modify gender varchar(20);
  alter table user_info modify subscribers bigint;
+ 
  desc user_info;
  
  create table post(
@@ -33,7 +34,20 @@ create database youtube;
  ); 
  
  rename table post to post_info;
- desc post;
+ 
+ alter table post_info add bio text;
+ alter table post_info add tagpeople boolean;
+ alter table post_info add content_info text;
+ 
+ alter table post_info drop content_info;
+ 
+ alter table post_info modify column post_type varchar(20);
+ alter table post_info modify no_of_viwers bigint;
+ alter table post_info modify tagpeople char;
+ 
+ alter table post_info rename column tagpeople to tag_people;
+ alter table post_info rename column no_of_viwers to viwers;
+ desc post_info;
  
  create table comments(
  no_of_comments int,
