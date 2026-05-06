@@ -98,5 +98,6 @@ create database youtube;
  
   desc youtube_description;
  
- 
+ drop table  youtube_description;
+ drop table comments_info;
  
