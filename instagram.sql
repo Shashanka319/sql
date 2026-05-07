@@ -6,7 +6,7 @@ show databases;
 
 create table user_info(
 user_id char(5), user_name varchar(20), user_password varchar(10), gender enum('male','female','others')
-)
+);
 
 insert into user_info(user_id, user_name, user_password, gender)
 values 
