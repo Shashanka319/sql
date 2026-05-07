@@ -10,16 +10,16 @@ create database youtube;
  gender enum('male','female','other'),
  email varchar(20)
  );
- alter table user_info add no_od_subscribers int;
+ alter table user_info add no_od_subscribers int, add bio text;
  alter table user_info add no_of_followers int;
  alter table user_info add description_type enum('source_code','link','information');
  
- alter table user_info drop description_type;
+ 
  
  alter table user_info rename column no_od_subscribers to subscribers;
  alter table user_info rename column no_of_followers to follwers;
  
- alter table user_info modify column phone_number bigint;
+ alter table user_info modify column phone_number bigint, modify bio varchar(20);
  alter table user_info modify gender varchar(20);
  alter table user_info modify subscribers bigint;
  
@@ -48,6 +48,24 @@ create database youtube;
  alter table post_info rename column tagpeople to tag_people;
  alter table post_info rename column no_of_viwers to viwers;
  desc post_info;
+ select * from post_info;
+ 
+ desc post_info;
+ 
+ insert into post_info
+ values('u103',"Shashank",'2026-09-22','1000',"video","hcbsjcvsjvsjvsv",'m'),
+ ('u102',"Madhan",'2020-09-23',"2000","image","sksjfsjfb",'n');
+ 
+ update post_info set poster_name="Shambu";
+ 
+ delete from post_info where post_id = 'u101';
+ 
+ delete from post_info;
+ 
+ 
+ 
+ 
+ 
  
  create table comments(
  no_of_comments int,
@@ -100,4 +118,19 @@ create database youtube;
  
  drop table  youtube_description;
  drop table comments_info;
+ 
+create table users(
+id char(5) unique ,
+user_name varchar(10),
+email varchar(20) not null unique,
+phone_number bigint(20)
+);
+desc users;
+insert into users
+values('u101',"SHashank","sharat1986@gmail.com",9743873982);
+
+insert into users
+values('u102',"SHashank","shank1986@gmail.com",9743873982);
+
+select * from users;
  
