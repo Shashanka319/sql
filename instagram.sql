@@ -1,9 +1,9 @@
 create database instagram;
 
 use instagram;
-
+PRIMARYemail
 show databases;
-
+course
 create table user_info(
 user_id char(5), user_name varchar(20), user_password varchar(10), gender enum('male','female','others')
 );
@@ -14,7 +14,7 @@ values
 ('u102',"Harshitha","harshi","female"),
 ('u103',"Keerthana","keerthi","female"),
 ('u104',"Akash","akza","male");
-
+employeesemployee_idemployeesemployees
 select * from user_info;
 
 create database supermarket_db;
@@ -53,7 +53,9 @@ insert into sold_products values
 (9, 'chips', 'snacks', 30),
 (10, 'ice cream', 'frozen food', 200),
 (11, 'soft drink', 'beverages', 100),
-(12, 'detergent', 'cleaning', 250);
+(12, 'detergent', 'cleaning', 250);users_info
+
+
 
 
 
